@@ -92,7 +92,11 @@ LeftJOYBTN_Trigger = 1 #Space Break
 # Hat Face - 3 buttons
 LeftJOYBTN_FaceBottom = 2 #Afterburner
 LeftJOYBTN_FaceLeft = 3 #Match Target Speed
-LeftJOYBTN_FaceRight = 4 #Cruise COntrol
+LeftJOYBTN_FaceRight = 4 #Cruise Control
+
+# Right cluster - 6 buttons
+LeftJOYBTN_Panel = 8 #HT
+
 
 #Hat
 LeftJOYHAT = 1

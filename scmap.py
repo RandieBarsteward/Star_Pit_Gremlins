@@ -3,13 +3,20 @@
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''"""
 
                         ############################
+                        #        STAR PIT         #
                         # STAR CITIZEN KEYBINDINGS #
                         ############################
 
 # Following joystick axes, buttons, and hats should be set in the key-bindings
 # of Star Citizen. You should not need to change these values.
-
-##############################################################################
+#
+#  Touch interface - Outputs to vJoy Device 2 which is intercepted and reissued by JOYSTICK GREMLIN
+#  as Vjoy device 1.  This allows modules to check status of vJoy device 1 buttons
+#  in the logic.
+#
+#
+#
+###############################################################################
 # JOYSTICK AXES (maximum of '8' supported by vJoy)
 #
 # Name of action                       # vJoy Axis
@@ -57,6 +64,7 @@ SpaceBrake = 20
 MatchTargetSpeed = 21
 CruiseControl = 22
 Afterburner = 23
+HTRecal = 24
 
 ##############################################################################
 # JOYSTICK HATS (maximum of '?' supported by Star Citizen)

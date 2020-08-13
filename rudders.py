@@ -24,12 +24,12 @@ active_curve = default_curve
 
 @rudders.axis(1)
 def LeftPedal(event, vjoy):
-    vjoy[1].axis(StrafeDown).value = active_curve(event.value)
+    vjoy[3].axis(StrafeDown).value = active_curve(event.value)
 
 @rudders.axis(2)
 def RightPedal(event, vjoy):
-    vjoy[1].axis(StrafeUp).value = active_curve(event.value)
+    vjoy[3].axis(StrafeUp).value = active_curve(event.value)
 
 @rudders.axis(6)
 def roll(event, vjoy):
-    vjoy[1].axis(Roll).value = active_curve(event.value)
+    vjoy[3].axis(Roll).value = active_curve(event.value)
