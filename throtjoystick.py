@@ -13,12 +13,12 @@ from joystick import *
 tm16000 = gremlin.input_devices.JoystickDecorator("T.16000M", "{955E0FD0-9F6E-11EA-8001-444553540000}",
                                                    "Default")
 
-forward_curve = CubicSpline(
+direction_curve = CubicSpline(
         [(-1.0, -1.0), (1.0, 1.0), (0.772, 0.552), (-0.772, -0.552)]
 )
 
 
-Strafe_curve = CubicSpline(
+roll_curve = CubicSpline(
         [(-1.0, -1.0), (1.0, 1.0), (0.772, 0.552), (-0.772, -0.552)]
 )
 
@@ -50,15 +50,15 @@ def HT_recalibrate(event, vjoy):
 
 @tm16000.axis(1)
 def pitch(event, vjoy):
-    vjoy[3].axis(StrafeLeftRight).value = Strafe_curve(event.value)
+    vjoy[3].axis(StrafeLeftRight).value = direction_curve(event.value)
 
 @tm16000.axis(2)
 def yaw(event, vjoy):
-    vjoy[3].axis(StrafeForwardBack).value = forward_curve(event.value)
+    vjoy[3].axis(StrafeForwardBack).value = direction_curve(event.value)
 
 @tm16000.axis(6)
 def yaw(event, vjoy):
-    vjoy[3].axis(Roll).value = active_curve(event.value)
+    vjoy[3].axis(Roll).value = roll_curve(event.value)
 
 @tm16000.axis(7)
 def yaw(event, vjoy):
